@@ -192,7 +192,6 @@ GameObject:
   - component: {fileID: 225997651387583512}
   - component: {fileID: 114978612860846582}
   - component: {fileID: 114287602942449860}
-  - component: {fileID: 114276933823430720}
   m_Layer: 5
   m_Name: MenuDialog
   m_TagString: Untagged
@@ -407,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1922798823700682
 GameObject:
   m_ObjectHideFlags: 1
@@ -1102,18 +1101,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &114276933823430720
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339699149722810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b54b8a01e9439b346814764e4186fe88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curtains: {fileID: 0}
 --- !u!114 &114287602942449860
 MonoBehaviour:
   m_ObjectHideFlags: 1

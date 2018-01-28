@@ -16,8 +16,8 @@ MonoBehaviour:
     ufoLicenseKey: QVJXZEp1RC8vLy8vQUFBQUtLU0hhUDJOcjBjZ2pLbVhhSTNGdndDWU5IN3lsQ1NVa1BrTFhOMW1Ia01kR2FQRXhUVit4T0sxZzV2QWZYZTkvSnk4R2pMdUYwNFovUnFtemFOeGxHQ1J0cXVXd05OcUpNQURhT1NFcURwZllOalMxclJxMndsdllLTnNXNEU5WkNueGxEN2NxZENCbjd1Y3hVVGdzMFMrM2FWQk5vbE5QWUZoTjh5OUxkMTFTOWVFQTY4WWxRVythdFV4dG1tbzdVRzlFaXEzaGF3NElXRGlhTXBaakZkR2U3YUZTaTgxNzk3cy82ZTZjZ2pHTDZaNW9lWHdzRloxN1lJbTlqNENtUWF5eVJ0aTVrNnVGUDdyNTlVakZKZldaVTg5TDlFdE5veWM2ZkViOVBnZ0VjNTdWNGRoRG5HWGRURm9NQ0JVeHV1NzRnSVFzOVdmVlUxOTd3dTJ3MDlsVTYzWWEwRG5sOFhLc2FnUVc4djM=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
+    maxSimultaneousImageTargets: 3
+    maxSimultaneousObjectTargets: 0
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
@@ -43,8 +43,10 @@ MonoBehaviour:
       FieldOfView: {x: 0, y: 0, z: 0, w: 0}
       ContainsMagnet: 0
   databaseLoad:
-    dataSetsToLoad: []
-    dataSetsToActivate: []
+    dataSetsToLoad:
+    - SignalsFromUruk
+    dataSetsToActivate:
+    - SignalsFromUruk
   videoBackground:
     clippingMode: 0
     numDivisions: 2
@@ -64,7 +66,7 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: "Microsoft\xAE LifeCam HD-3000"
+    deviceNameSetInEditor: "Microsoft\xAE LifeCam HD-3000 #2"
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
