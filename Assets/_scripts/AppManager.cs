@@ -2,21 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AdventUR
+namespace SignalsFromUruk
 {
     public class AppManager : MonoBehaviour
     {
 
-        // Use this for initialization
         void Start()
         {
 
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }

@@ -7,20 +7,19 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI TimerLabel;
-    public float CountdownFrom = 60 * 10;
-
+    private float CountdownFrom = 60 * 10;
 
     void Update()
     {
-        float time = CountdownFrom - Time.timeSinceLevelLoad;
+        float timeRemaining = CountdownFrom - Time.timeSinceLevelLoad;
 
-        var hours = Mathf.FloorToInt((float)(CountdownFrom - Time.timeSinceLevelLoad) / 3600);
-        var minutes = Mathf.FloorToInt((float)(CountdownFrom - Time.timeSinceLevelLoad - hours * 3600) / 60);
-        var seconds = Mathf.FloorToInt((CountdownFrom - Time.timeSinceLevelLoad) % 60);
+        var hours = Mathf.FloorToInt((float)(timeRemaining) / 3600);
+        var minutes = Mathf.FloorToInt((float)(timeRemaining - hours * 3600) / 60);
+        var seconds = Mathf.FloorToInt((timeRemaining) % 60);
 
         TimerLabel.text = string.Format("{0}:{1}", minutes, seconds);
 
-        if (time <= 0f) {
+        if (timeRemaining <= 0f) {
             TimeUp();
         }
     }
