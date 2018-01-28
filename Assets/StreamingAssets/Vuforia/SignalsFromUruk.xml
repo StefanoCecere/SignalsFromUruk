@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="tracker_tablet" size="6.000000 4.740234" />
     <ImageTarget name="place_ur" size="5.700000 8.778703" />
     <ImageTarget name="place_temple" size="5.700000 8.778703" />
     <ImageTarget name="place_river" size="5.700000 8.778703" />

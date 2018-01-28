@@ -66,7 +66,7 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: "Microsoft\xAE LifeCam HD-3000 #2"
+    deviceNameSetInEditor: "Microsoft\xAE LifeCam HD-3000"
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
