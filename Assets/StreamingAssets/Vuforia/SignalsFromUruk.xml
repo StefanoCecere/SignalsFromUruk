@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="place_bathroom" size="0.570000 0.877870" />
-    <ImageTarget name="object_box" size="0.570000 0.877870" />
-    <ImageTarget name="place_classroom" size="0.570000 0.877870" />
-    <ImageTarget name="character_teacher" size="0.570000 0.877870" />
+    <ImageTarget name="place_ur" size="5.700000 8.778703" />
+    <ImageTarget name="place_temple" size="5.700000 8.778703" />
+    <ImageTarget name="place_river" size="5.700000 8.778703" />
+    <ImageTarget name="place_garden" size="5.700000 8.778703" />
+    <ImageTarget name="place_classroom" size="5.700000 8.778703" />
+    <ImageTarget name="place_bathroom" size="5.700000 8.778703" />
+    <ImageTarget name="object_tablet_2" size="5.700000 8.778703" />
+    <ImageTarget name="object_tablet_1" size="5.700000 8.778703" />
+    <ImageTarget name="object_somar" size="5.700000 8.778703" />
+    <ImageTarget name="object_musicalbox" size="5.700000 8.778703" />
+    <ImageTarget name="object_meridian" size="5.700000 8.778703" />
+    <ImageTarget name="object_erb" size="5.700000 8.778703" />
+    <ImageTarget name="object_club" size="5.700000 8.778703" />
+    <ImageTarget name="object_box" size="5.700000 8.778703" />
+    <ImageTarget name="character_teacher" size="5.700000 8.778703" />
+    <ImageTarget name="character_goddess" size="5.700000 8.778703" />
+    <ImageTarget name="character_gilgamesh" size="5.700000 8.778703" />
+    <ImageTarget name="character_doctor" size="5.700000 8.778703" />
+    <ImageTarget name="character_astronomer" size="5.700000 8.778703" />
   </Tracking>
 </QCARConfig>

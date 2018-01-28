@@ -4033,10 +4033,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1787952938}
-  selectedCommands:
-  - {fileID: 1787952966}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -4804,7 +4802,7 @@ MonoBehaviour:
     booleanVal: 0
 --- !u!114 &1787952966
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1787952930}
@@ -4821,7 +4819,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &1787952967
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1787952930}
