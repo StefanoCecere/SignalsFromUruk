@@ -2,6 +2,154 @@ Changelog {#changelog}
 =========
 [TOC]
 
+v3.11.5 {#v3.11.5}
+======
+
+## Fixed
+
+- Mushroom icon for the inspector moved in 2019 as to not overlap the new visibility toggle Unity has added. #745
+- FlowchartWindow MutliSelect now more strictly manages selectedness #744
+- Portrait sprite issue in Unity 2019 #743
+
+## Changed
+
+- Experimental Searchable menus are now enabled by default #746
+
+v3.11.4 {#v3.11.4}
+======
+
+## Changed
+
+- Updated project to Unity 2019.1.0f2
+- Updated to .NET 4.x
+- Updated reference docs
+
+v3.11.3 {#v3.11.3}
+======
+
+## Fixed
+
+- Additional null checks around Flowchart.selectedBlocks and Flowchart.selectedCommands.
+
+v3.11.2 {#v3.11.2}
+======
+
+## Fixed
+
+- Static list caching in editor.
+
+## Changed
+
+- Spacing in debug output related to Block find and execute warnings and failures.
+
+v3.11.1 {#v3.11.1}
+======
+
+## Fixed
+
+- Compile error in Unity 2018.3.6f1
+
+v3.11.0 {#v3.11.0}
+======
+
+## Added
+
+- SetSprite: changes the image on the SpriteRenderer of one or more GameObjects 
+- SetUIImage: changes the image on the Image of one or more GameObjects (Joerg Burbach)
+- Commands to store FungusVariable.ToString into a StringVariable and to parse a string into an Int or Float FungusVariable 
+
+## Fixed
+
+- #729 VariableEditor popup name and key concat no longer has spaces, allows the PopUp to correctly nest items with the same parent
+- #732 BlockInspector correct top panel height in 2018_3 BlockEditor only force unique name if it has changed
+- BlockInspector and BlockEditor changes to display correctly in 2019.1.0a13
+
+## Changed
+
+- #728 FlowchartWindow performance for 100s of blocks
+- #727 Support use of TMPro in Set Text, Get Text and Narrative Log Menu commands
+- #733 Command can now cache a list of referenced variables that are checked by the variablelistadapter for highlighting 
+- Flowchart can identify add variables found via the substitute regex 
+- Commands that use SubstituteVariables on their string data use the new caching method so they can highlight variables that will be used during substitution
+- #733 HasReference added to many commands that lacked them or had only partially checked vars
+
+v3.10.0 {#v3_10_0}
+======
+
+## Added
+- #725 Added Stop Then Call mode in Call command. Stops the calling Block immediately, instead of waiting a frame.
+- #718 Say and Menu dialogs now support TextMeshPro directly
+  - TextMeshPro demo scene - A default say dialog but with TextMeshPro Text UI elements in place of uGUI Text 
+  - A default menu dialog but with TextMeshPro Text UI elements in place of uGUI Text
+  - TextAdapter can be asked to include children in text output search MenuDialogue now uses TextAdapter rather than assuming UI.Text
+- #720 Variable reference allows for selecting a flowchart a targeting a specific fungus variable for use from c#
+- #705 Added FirstPersonDemo examples
+- New audio commands: Play Ambience Sound, Stop Ambience Sound, Play Random sound.
+
+## Fixed
+- #717 Control Audio > Play Loop volume is always 1
+- #723 Unity 2018.3 Warnings
+- #711 Beeps in WriterAudio ignores last sound in array
+- PLay Sound Effect volume is now independent of Set Music Volume setting
+- Correct width calc on smaller width inspectors
+- #708 Specifically identify choice blocks as hexagons in documentation
+
+## Changed
+- #721 Conversation text can now contain colons within the text body itself
+- #719 Change FlowchartMenuItem.SpawnPrefab to GameObject.Inst rather than PrefabUtil to avoid exception modifications.empty
+- #709 Command searchable pop up
+	- Added Fungus Preferences setting to enable Searchable PopupMenus
+- #694 Adding Random Sound Command and Ambiance Sounds - thanks to Hector Castelli
+- #704 Replaced Rotorz Reorderable List with Unity's InternalReorderable list
+- ExceuteOnEvent dropdown is searchable -can double click to circumvent the search drop down -can remove event by setting None -use search similar to add command method
+
+Changelog {#changelog}
+=========
+[TOC]
+
+v3.9.1 {#v3_9_1}
+======
+
+## Added
+- Text Variation Handler: Adds Ink-style text variation in Say, Menu and Conversation commands. #695 
+
+## Fixed
+- Fixed Reorderable List control errors in 2018.2. Compatible with 2017.4, 2018.1 2018.2 #697
+
+v3.9.0 {#v3_9_0}
+======
+
+## Added
+- Conversation command supports setting default clear, wait for input and fade options #673
+- Added Fungus Priority Signals #671 #670
+    - allows fungus to notify the outside world that it is doing something of priority so the outside world can pause
+- Added GetKey fungus command. #683
+    - Supports positive and negative keybindings output to a bool, float or int variable 
+    - Supports checking for pressed, release and current state 
+    - Uses keycode with optional fallback to key name
+- Disabled Flowcharts and EventHandlers. #682
+- Added Dialog history on Save Menu UI #675
+- Added BlockReference, a simple data type with a property drawer that makes it easier to select a target fungus block from external c# scripts. #669
+- Added comparison (equals and not equals) as well as assign functionality to most variable types. #668
+
+## Changed
+- Updated to Unity 2018.1 #681
+- Conversation Manager Regex now allows - and _ within say params group. #692
+- Conversation example scene makes some basic use of new Conversation features
+- Update LeanTween to 2.46 #689
+- PortraitController forces alpha and color tweens to be non recursive.
+- Updated playground demos
+    - Football uses GetKey instead of GetAxis (get axis was failing in some packages as inputmanager axis were not imported)
+    - Defender had a bug due to a change in how unity syncs 'up' between transform and rb2d
+
+## Fixed
+- ElseIfs now confirm that the previous condition was at the same indent as themselves. #693
+- NarrativeLog is tolerant of null Name or Story fields #690
+- Force the hierarchy icon list to refresh when a script a is loaded/changed #672
+- Eventhandlers no longer fire when the flowchart is disabled #682
+- StopFlowchart can continue now #685
+- Fixed stray \\ that were not being stripped on Mac OS, when importing editor resources. #686
+ 
 v3.8.0 {#v3_8_0}
 ======
 
@@ -324,16 +472,16 @@ Awesome github contributors:
 
 ## Added
 - FungusLua: Lua scripting support for Fungus via wrapper components for using MoonSharp in Unity. #281, #317, #334, #237, #235, #232, #224
-	- LuaEnvironment component: Execution environment for running Lua scripts.
-	- LuaUtils component: Extends LuaEnvironment with lots of useful features.
-	- LuaBindings: Maps Unity objects & components to Lua variables for use in Lua scripts.
-	- LuaScript: Runs Lua code from a text file or from a string property.
-	- LuaStore: Stores variables in a global table which persists across scene loads.
-	- FungusModule: A set of utility functions for scripting Unity and Fungus from Lua.
-	- FungusPrefs: An improved version of PlayerPrefs that can be easily used from Lua.
-	- ExecuteHandler: Listens for any standard Unity event and calls a method on a component in the gameobject. #247
-	- ExecuteLua command: Run some Lua script in a Fungus command. Return values can be stored in Fungus variables.
-	- PODTypeFactory: Utility factory class for instantiating Plain-Old-Data (POD) types like Color, Vector3, etc.
+    - LuaEnvironment component: Execution environment for running Lua scripts.
+    - LuaUtils component: Extends LuaEnvironment with lots of useful features.
+    - LuaBindings: Maps Unity objects & components to Lua variables for use in Lua scripts.
+    - LuaScript: Runs Lua code from a text file or from a string property.
+    - LuaStore: Stores variables in a global table which persists across scene loads.
+    - FungusModule: A set of utility functions for scripting Unity and Fungus from Lua.
+    - FungusPrefs: An improved version of PlayerPrefs that can be easily used from Lua.
+    - ExecuteHandler: Listens for any standard Unity event and calls a method on a component in the gameobject. #247
+    - ExecuteLua command: Run some Lua script in a Fungus command. Return values can be stored in Fungus variables.
+    - PODTypeFactory: Utility factory class for instantiating Plain-Old-Data (POD) types like Color, Vector3, etc.
     - Lots of FungusLua example scenes
     - Fungus documentation now has an extensive section on LuaScripting.
 - StringDataMulti: Like StringData, but uses a multi-line textbox in the inspector.
@@ -405,16 +553,16 @@ v2.4.0 {#v2_4_0}
 
 ## Added
 - FungusLua: Lua scripting support for Fungus via wrapper components for using MoonSharp in Unity. #281, #317, #334, #237, #235, #232, #224
-	- LuaEnvironment component: Execution environment for running Lua scripts.
-	- LuaUtils component: Extends LuaEnvironment with lots of useful features.
-	- LuaBindings: Maps Unity objects & components to Lua variables for use in Lua scripts.
-	- LuaScript: Runs Lua code from a text file or from a string property.
-	- LuaStore: Stores variables in a global table which persists across scene loads.
-	- FungusModule: A set of utility functions for scripting Unity and Fungus from Lua.
-	- FungusPrefs: An improved version of PlayerPrefs that can be easily used from Lua.
-	- ExecuteHandler: Listens for any standard Unity event and calls a method on a component in the gameobject. #247
-	- ExecuteLua command: Run some Lua script in a Fungus command. Return values can be stored in Fungus variables.
-	- PODTypeFactory: Utility factory class for instantiating Plain-Old-Data (POD) types like Color, Vector3, etc.
+    - LuaEnvironment component: Execution environment for running Lua scripts.
+    - LuaUtils component: Extends LuaEnvironment with lots of useful features.
+    - LuaBindings: Maps Unity objects & components to Lua variables for use in Lua scripts.
+    - LuaScript: Runs Lua code from a text file or from a string property.
+    - LuaStore: Stores variables in a global table which persists across scene loads.
+    - FungusModule: A set of utility functions for scripting Unity and Fungus from Lua.
+    - FungusPrefs: An improved version of PlayerPrefs that can be easily used from Lua.
+    - ExecuteHandler: Listens for any standard Unity event and calls a method on a component in the gameobject. #247
+    - ExecuteLua command: Run some Lua script in a Fungus command. Return values can be stored in Fungus variables.
+    - PODTypeFactory: Utility factory class for instantiating Plain-Old-Data (POD) types like Color, Vector3, etc.
     - Lots of FungusLua example scenes
     - Fungus documentation now has an extensive section on LuaScripting.
 - StringDataMulti: Like StringData, but uses a multi-line textbox in the inspector.
